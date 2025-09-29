@@ -20,12 +20,13 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
-    - name: Levantar API local
+    - name: Levantar API local con Uvicorn
       run: |
-        python main.py &
+        pip install uvicorn
+        uvicorn main:app --host 0.0.0.0 --port 8080 &
         sleep 5
 
-    - name: Run endpoint test
+    - name: Ejecutar test del endpoint
       run: |
         pip install requests
         python tests/test_endpoint.py
