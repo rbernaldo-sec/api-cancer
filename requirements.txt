@@ -1,0 +1,13 @@
+# Backend y servidor API
+flask==3.0.3              # Framework ligero para construir la API REST
+
+# Modelado y entrenamiento
+scikit-learn==1.5.1       # Biblioteca principal para modelos de machine learning
+joblib==1.4.2             # Utilidad para serializar y cargar el modelo entrenado
+
+# Cálculo y manipulación de datos
+numpy==1.26.4             # Operaciones numéricas y estructuras de arrays
+pandas==2.2.2             # Manipulación de datos tabulares
+
+# Comunicación entre cliente y servidor
+requests==2.32.3          # Cliente HTTP para enviar solicitudes a la API desde scripts externos

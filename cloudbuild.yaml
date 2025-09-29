@@ -1,0 +1,11 @@
+steps:
+  # 1. Construir imagen Docker
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'southamerica-west1-docker.pkg.dev/ml-api-cancer-2025/ml-models/cancer-api:latest', '.']
+
+  # 2. Subir imagen a Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'southamerica-west1-docker.pkg.dev/ml-api-cancer-2025/ml-models/cancer-api:latest']
+
+images:
+  - 'southamerica-west1-docker.pkg.dev/ml-api-cancer-2025/ml-models/cancer-api:latest'
