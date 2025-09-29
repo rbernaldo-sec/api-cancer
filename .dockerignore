@@ -1,0 +1,6 @@
+*.docx
+*.pdf
+*.csv
+__pycache__/
+tests/
+.github/
