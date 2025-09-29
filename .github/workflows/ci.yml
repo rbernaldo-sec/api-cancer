@@ -20,6 +20,11 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
+    - name: Levantar API local
+      run: |
+        python main.py &
+        sleep 5
+
     - name: Run endpoint test
       run: |
         pip install requests
@@ -28,7 +33,6 @@ jobs:
     - name: Build Docker image
       run: docker build -t api-cancer .
 
-    # Opcional: Push a DockerHub
     - name: Login to DockerHub
       if: success()
       run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
